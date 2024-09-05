@@ -1,0 +1,48 @@
+using System;
+
+while (true)
+{
+    string s = " ";
+    s = Console.ReadLine();
+    int a = 0, b = 0, result;
+    char c = '+';
+    int i = 0;
+    foreach (var x  in s)
+    {
+        if (x is '+' or '*' or '/' or '-')
+        {
+            c = x;
+            break;
+        }
+        i++;
+    }
+    switch (c)
+    {
+        case '+':
+            {
+                for(int j = 0;j<i - 1;j++)
+                { 
+                    a = Convert.ToInt32(s[j]) - 48;
+                }
+                for (int j = i + 2; j < s.Length; j++)
+                {
+                    b = Convert.ToInt32(s[j]) - 48;
+                }
+                result = a + b;
+                Console.WriteLine("a + b = " + result);
+                break;
+            }
+        case '*':
+            {
+                break;
+            }
+        case '/':
+            {
+                break;
+            }
+        case '-':
+            {
+                break;
+            }
+    }
+}
