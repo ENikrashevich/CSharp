@@ -1,48 +1,104 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
-while (true)
+namespace CalculatorCSharp;
+
+public static class Program
 {
-    string s = " ";
-    s = Console.ReadLine();
-    int a = 0, b = 0, result;
-    char c = '+';
-    int i = 0;
-    foreach (var x  in s)
+    public static void Main()
     {
-        if (x is '+' or '*' or '/' or '-')
+        bool flag = true;
+        while (flag)
         {
-            c = x;
-            break;
-        }
-        i++;
-    }
-    switch (c)
-    {
-        case '+':
+            string s = " ";
+            s = Console.ReadLine();
+            double a = 0, b = 0, result = 0;
+            char c = 'e';
+            int i = 0;
+            string num1 = "", num2 = "";
+            foreach (var x in s)
             {
-                for(int j = 0;j<i - 1;j++)
-                { 
-                    a = Convert.ToInt32(s[j]) - 48;
-                }
-                for (int j = i + 2; j < s.Length; j++)
+                if (x is '+' or '*' or '/' or '-')
                 {
-                    b = Convert.ToInt32(s[j]) - 48;
+                    c = x;
+                    break;
                 }
-                result = a + b;
-                Console.WriteLine("a + b = " + result);
-                break;
+                i++;
             }
-        case '*':
+            switch (c)
             {
-                break;
+                case '+':
+                    {
+                        for (int j = 0; j < i - 1; j++)
+                        {
+                            num1 += s[j];
+                        }
+                        a = Convert.ToInt32(num1);
+                        for (int j = i + 2; j < s.Length; j++)
+                        {
+                            num2 += s[j];
+                        }
+                        b = Convert.ToInt32(num2);
+                        result = a + b;
+                        Console.WriteLine("a + b = " + result);
+                        break;
+                    }
+                case '*':
+                    {
+                        for (int j = 0; j < i - 1; j++)
+                        {
+                            num1 += s[j];
+                        }
+                        a = Convert.ToInt32(num1);
+                        for (int j = i + 2; j < s.Length; j++)
+                        {
+                            num2 += s[j];
+                        }
+                        b = Convert.ToInt32(num2);
+                        result = a * b;
+                        Console.WriteLine("a * b = " + result);
+                        break;
+                    }
+                case '/':
+                    {
+                        for (int j = 0; j < i - 1; j++)
+                        {
+                            num1 += s[j];
+                        }
+                        a = Convert.ToInt32(num1);
+                        for (int j = i + 2; j < s.Length; j++)
+                        {
+                            num2 += s[j];
+                        }
+                        b = Convert.ToInt32(num2);
+                        result = a / b;
+                        Console.WriteLine("a / b = " + result);
+                        break;
+                    }
+                case '-':
+                    {
+                        for (int j = 0; j < i - 1; j++)
+                        {
+                            num1 += s[j];
+                        }
+                        a = Convert.ToInt32(num1);
+                        for (int j = i + 2; j < s.Length; j++)
+                        {
+                            num2 += s[j];
+                        }
+                        b = Convert.ToInt32(num2);
+                        result = a - b;
+                        Console.WriteLine("a - b = " + result);
+                        break;
+                    }
+                case 'e':
+                    {
+                        flag = false;
+                        break;
+                    }
+
             }
-        case '/':
-            {
-                break;
-            }
-        case '-':
-            {
-                break;
-            }
+        }
     }
 }
