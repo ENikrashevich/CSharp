@@ -14,28 +14,36 @@ public static class Program
             string s = " ";
             s = Console.ReadLine();
             double a = 0, b = 0, result = 0;
-            char c = 'e';
+            string c = "exit";
             int i = 0;
             string num1 = "", num2 = "";
             foreach (var x in s)
             {
-                if (x is '+' or '*' or '/' or '-')
+                if (x is '+' or '*' or '/' or '-' or '%')
                 {
-                    c = x;
+                    c = "";
+                    c += x;
                     break;
                 }
                 i++;
             }
             switch (c)
             {
-                case '+':
+                case "+":
                     {
-                        for (int j = 0; j < i - 1; j++)
+                        if(i == 1)
                         {
-                            num1 += s[j];
+                            num1 += s[0];
+                        }
+                        else
+                        {
+                            for (int j = 0; j < i - 1; j++)
+                            {
+                                num1 += s[j];
+                            }
                         }
                         a = Convert.ToInt32(num1);
-                        for (int j = i + 2; j < s.Length; j++)
+                        for (int j = i + 1; j < s.Length; j++)
                         {
                             num2 += s[j];
                         }
@@ -44,14 +52,21 @@ public static class Program
                         Console.WriteLine("a + b = " + result);
                         break;
                     }
-                case '*':
+                case "*":
                     {
-                        for (int j = 0; j < i - 1; j++)
+                        if (i == 1)
                         {
-                            num1 += s[j];
+                            num1 += s[0];
+                        }
+                        else
+                        {
+                            for (int j = 0; j < i - 1; j++)
+                            {
+                                num1 += s[j];
+                            }
                         }
                         a = Convert.ToInt32(num1);
-                        for (int j = i + 2; j < s.Length; j++)
+                        for (int j = i + 1; j < s.Length; j++)
                         {
                             num2 += s[j];
                         }
@@ -60,14 +75,21 @@ public static class Program
                         Console.WriteLine("a * b = " + result);
                         break;
                     }
-                case '/':
+                case "/":
                     {
-                        for (int j = 0; j < i - 1; j++)
+                        if (i == 1)
                         {
-                            num1 += s[j];
+                            num1 += s[0];
+                        }
+                        else
+                        {
+                            for (int j = 0; j < i - 1; j++)
+                            {
+                                num1 += s[j];
+                            }
                         }
                         a = Convert.ToInt32(num1);
-                        for (int j = i + 2; j < s.Length; j++)
+                        for (int j = i + 1; j < s.Length; j++)
                         {
                             num2 += s[j];
                         }
@@ -76,14 +98,21 @@ public static class Program
                         Console.WriteLine("a / b = " + result);
                         break;
                     }
-                case '-':
+                case "-":
                     {
-                        for (int j = 0; j < i - 1; j++)
+                        if (i == 1)
                         {
-                            num1 += s[j];
+                            num1 += s[0];
+                        }
+                        else
+                        {
+                            for (int j = 0; j < i - 1; j++)
+                            {
+                                num1 += s[j];
+                            }
                         }
                         a = Convert.ToInt32(num1);
-                        for (int j = i + 2; j < s.Length; j++)
+                        for (int j = i + 1; j < s.Length; j++)
                         {
                             num2 += s[j];
                         }
@@ -92,7 +121,30 @@ public static class Program
                         Console.WriteLine("a - b = " + result);
                         break;
                     }
-                case 'e':
+                case "%":
+                    {
+                        if (i == 1)
+                        {
+                            num1 += s[0];
+                        }
+                        else
+                        {
+                            for (int j = 0; j < i - 1; j++)
+                            {
+                                num1 += s[j];
+                            }
+                        }
+                        a = Convert.ToInt32(num1);
+                        for (int j = i + 1; j < s.Length; j++)
+                        {
+                            num2 += s[j];
+                        }
+                        b = Convert.ToInt32(num2);
+                        result = a % b;
+                        Console.WriteLine("a % b = " + result);
+                        break;
+                    }
+                case "exit":
                     {
                         flag = false;
                         break;
