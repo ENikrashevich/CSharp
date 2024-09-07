@@ -1,0 +1,113 @@
+using System;
+
+public class Game
+{
+
+    public void check_less_100_int(int x, int key)
+    {
+        if (x >= key - 100 && x <= key + 100)
+            Console.WriteLine("Разница меньше или равна 100");
+        else
+            Console.WriteLine("Разница больше 100");
+        return;
+    }
+
+    public void check_less_10_int(int x, int key) 
+    {
+        if (x >= key - 10 && x <= key + 10)
+            Console.WriteLine("Разница меньше или равна 10");
+        else
+            Console.WriteLine("Разница больше 10");
+        return;
+    }
+
+    public void check_less_100_double(double x, double key)
+    {
+        if (x >= key - 100 && x <= key + 100)
+            Console.WriteLine("Разница меньше или равна 100");
+        else
+            Console.WriteLine("Разница больше 100");
+        return;
+    }
+
+    public void check_less_10_double(double x, double key)
+    {
+        if (x >= key - 10 && x >= key + 10)
+            Console.WriteLine("Разница меньше или равна 10");
+        else
+            Console.WriteLine("Разница больше 10");
+        return;
+    }
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Выберите какое число загадывать" + '\n' + "1. Целые" + '\n' + "2. С плав. точкой" + '\n' + "3. Выход из игры");
+        rand random = new rand();
+        Game game = new Game();
+        bool flag = true;
+        bool flag_win = false;
+        while (flag)
+        {
+            string s = "";
+            s = Console.ReadLine();
+            switch (s)
+            {
+                case "1":
+                    {
+                        int key = random.rand_int();
+                        int x = Convert.ToInt32(Console.ReadLine());
+                        while (x != key)
+                        {
+                            if(x >= key - 100 && x <= key + 100)
+                                game.check_less_100_int(x, key);
+                            if(x >= key - 10 && x <= key + 10)
+                                game.check_less_10_int(x, key);
+                            x = Convert.ToInt32(Console.ReadLine());
+                        }
+                        Console.WriteLine("Поздравляю с победой!");
+                        flag_win = true;
+                        Console.WriteLine("Выберите какое число загадывать" + '\n' + "1. Целые" + '\n' + "2. С плав. точкой" + '\n' + "3. Выход из игры");
+                        break;
+                    }
+                case "2":
+                    {
+                        double key = random.rand_double();
+                        double x = Convert.ToDouble(Console.ReadLine());
+                        while (x != key)
+                        {
+                            if(x >= key - 100 && x <= key + 100)
+                                game.check_less_100_double(x, key);
+                            if(x >= key - 10 && x <= key + 10)
+                                game.check_less_10_double(x, key);
+                            x = Convert.ToInt32(Console.ReadLine());
+                        }
+                        Console.WriteLine("Поздравляю с победой!");
+                        flag_win = true;
+                        Console.WriteLine("Выберите какое число загадывать" + '\n' + "1. Целые" + '\n' + "2. С плав. точкой" + '\n' + "3. Выход из игры");
+                        break;
+                    }
+                case "3":
+                    {
+                        flag = false;
+                        if(!flag_win) 
+                            Console.WriteLine("СЛАБОООООСТЬ");
+                        break;
+                    }
+            }
+        }
+    }
+}
+public class rand
+{
+    public int rand_int()
+    {
+        Random rand = new Random();
+        int rand_i = rand.Next(0, 999);
+        return rand_i;
+    }
+    public double rand_double()
+    {
+        Random rand = new Random();
+        double rand_d = Convert.ToDouble(rand_int()) + rand.NextDouble();
+        return rand_d;
+    }
+}
