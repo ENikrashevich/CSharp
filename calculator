@@ -1,16 +1,54 @@
 using System;
-using System.Linq;
-using System.Collections.Generic;
 
-namespace CalculatorCSharp;
-
-public static class Program
+public class Calculator
 {
-    public static void Main()
+    public double sum(double a, double b)
     {
+        Console.WriteLine("a + b = " + (a+b));
+        return a + b;
+    }
+    public double multi(double a, double b)
+    {
+        Console.WriteLine("a * b = " + (a * b));
+        return a * b;
+    }
+    public double div(double a, double b)
+    {
+        Console.WriteLine("a / b = " + (a / b));
+        return a / b;
+    }
+    public double minus(double a, double b)
+    {
+        Console.WriteLine("a - b = " + (a - b));
+        return a - b;
+    }
+    public double abs(double a, double b)
+    {
+        Console.WriteLine("a % b = " + (a % b));
+        return a % b;
+    }
+    public void present()
+    {
+        Console.WriteLine("Созданы случайные a и b для показа работы программы ");
+        Calculator calc = new Calculator(); 
+        generator_rand rand = new generator_rand(); 
+        double a = rand.generate();
+        double b = rand.generate();
+        Console.WriteLine("a = " + a);
+        Console.WriteLine("b = " + b);
+        calc.sum(a, b);
+        calc.multi(a, b);
+        calc.div(a, b);
+        calc.minus(a, b);
+        calc.abs(a, b);
+    }
+    public void calculator()
+    {
+        Calculator calculate = new Calculator();
         bool flag = true;
         while (flag)
         {
+            Console.Write("Введите выражение: ");
             string s = " ";
             s = Console.ReadLine();
             double a = 0, b = 0, result = 0;
@@ -19,7 +57,7 @@ public static class Program
             string num1 = "", num2 = "";
             foreach (var x in s)
             {
-                if (x is '+' or '*' or '/' or '-' or '%')
+                if (x is '+' or '*' or '/' or '-' or '%' && i != 0)
                 {
                     c = "";
                     c += x;
@@ -37,7 +75,7 @@ public static class Program
                         }
                         else
                         {
-                            for (int j = 0; j < i - 1; j++)
+                            for (int j = 0; j < i; j++)
                             {
                                 num1 += s[j];
                             }
@@ -48,8 +86,7 @@ public static class Program
                             num2 += s[j];
                         }
                         b = Convert.ToInt32(num2);
-                        result = a + b;
-                        Console.WriteLine("a + b = " + result);
+                        calculate.sum(a, b);
                         break;
                     }
                 case "*":
@@ -60,7 +97,7 @@ public static class Program
                         }
                         else
                         {
-                            for (int j = 0; j < i - 1; j++)
+                            for (int j = 0; j < i; j++)
                             {
                                 num1 += s[j];
                             }
@@ -71,8 +108,7 @@ public static class Program
                             num2 += s[j];
                         }
                         b = Convert.ToInt32(num2);
-                        result = a * b;
-                        Console.WriteLine("a * b = " + result);
+                        calculate.multi(a, b);
                         break;
                     }
                 case "/":
@@ -83,7 +119,7 @@ public static class Program
                         }
                         else
                         {
-                            for (int j = 0; j < i - 1; j++)
+                            for (int j = 0; j < i; j++)
                             {
                                 num1 += s[j];
                             }
@@ -94,8 +130,7 @@ public static class Program
                             num2 += s[j];
                         }
                         b = Convert.ToInt32(num2);
-                        result = a / b;
-                        Console.WriteLine("a / b = " + result);
+                        calculate.div(a, b); ;
                         break;
                     }
                 case "-":
@@ -106,7 +141,7 @@ public static class Program
                         }
                         else
                         {
-                            for (int j = 0; j < i - 1; j++)
+                            for (int j = 0; j < i; j++)
                             {
                                 num1 += s[j];
                             }
@@ -117,8 +152,7 @@ public static class Program
                             num2 += s[j];
                         }
                         b = Convert.ToInt32(num2);
-                        result = a - b;
-                        Console.WriteLine("a - b = " + result);
+                        calculate.minus(a, b);                       
                         break;
                     }
                 case "%":
@@ -129,7 +163,7 @@ public static class Program
                         }
                         else
                         {
-                            for (int j = 0; j < i - 1; j++)
+                            for (int j = 0; j < i; j++)
                             {
                                 num1 += s[j];
                             }
@@ -140,8 +174,7 @@ public static class Program
                             num2 += s[j];
                         }
                         b = Convert.ToInt32(num2);
-                        result = a % b;
-                        Console.WriteLine("a % b = " + result);
+                        calculate.abs(a, b);  
                         break;
                     }
                 case "exit":
@@ -152,5 +185,27 @@ public static class Program
 
             }
         }
+    }
+}
+
+public class generator_rand
+{
+    public double generate()
+    {
+        Random rand = new Random();
+        double part_int = Convert.ToDouble(rand.Next());
+        double part_double = rand.NextDouble();
+        //Console.WriteLine(part_int + part_double);
+        return part_int + part_double;
+    }
+}
+
+public class present
+{
+    public static void Main()
+    {
+        Calculator calculator = new Calculator();   
+        calculator.present();
+        calculator.calculator();
     }
 }
