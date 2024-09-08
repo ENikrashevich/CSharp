@@ -30,13 +30,15 @@ public class work_array
                         a = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("3. Напечатать массив");
-                        Console.WriteLine("4. Сумму всех элементов массива");
-                        Console.WriteLine("5. Среднее значение массива");
-                        Console.WriteLine("6. Максимальное значение массива");
-                        Console.WriteLine("7. Минимальное значение массива");
-                        Console.WriteLine("8. Самое частое число в массиве");
-                        Console.WriteLine("9. Выход из режима");
+                        Console.WriteLine("3.  Напечатать массив");
+                        Console.WriteLine("4.  Сумму всех элементов массива");
+                        Console.WriteLine("5.  Среднее значение массива");
+                        Console.WriteLine("6.  Максимальное значение массива");
+                        Console.WriteLine("7.  Минимальное значение массива");
+                        Console.WriteLine("8.  Самое частое число в массиве");
+                        Console.WriteLine("9.  Отсортировать массив");
+                        Console.WriteLine("10. Проверка на палидромность");
+                        Console.WriteLine("11. Выход из режима");
                         Console.WriteLine();
                         Console.WriteLine();
                         string c = "";
@@ -83,17 +85,32 @@ public class work_array
                                     }
                                 case "9":
                                     {
+                                        Array.Sort(a);
+                                        Console.WriteLine("Массив отсортирован");
+                                        break;
+                                    }
+                                case "10":
+                                    {
+                                        if (array.palindrom(n, a))
+                                            Console.WriteLine("Массив является палиндромом");
+                                        else
+                                            Console.WriteLine("Массив не является палиндромом");
+                                        break;
+                                    }
+                                case "11":
+                                    {
                                         flag_1 = false;
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Выберите действие: ");
                                         Console.WriteLine("1. Ввести массив в ручную до 1000 элементов");
                                         Console.WriteLine("2. Сгенерировать случайный массив до 1000 элементов");
-                                        Console.WriteLine("10. Выход из программы");
+                                        Console.WriteLine("exit - Выход из программы");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         break;
                                     }
+                                    
                             }
                         }
                         break;
@@ -110,18 +127,20 @@ public class work_array
                         array.print_array(n, a);
                         Console.WriteLine();
                         Console.WriteLine();
-                        Console.WriteLine("3. Напечатать массив");
-                        Console.WriteLine("4. Сумму всех элементов массива");
-                        Console.WriteLine("5. Среднее значение массива");
-                        Console.WriteLine("6. Максимальное значение массива");
-                        Console.WriteLine("7. Минимальное значение массива");
-                        Console.WriteLine("8. Самое частое число в массиве");
-                        Console.WriteLine("9. Выход из режима");
+                        Console.WriteLine("3.  Напечатать массив");
+                        Console.WriteLine("4.  Сумму всех элементов массива");
+                        Console.WriteLine("5.  Среднее значение массива");
+                        Console.WriteLine("6.  Максимальное значение массива");
+                        Console.WriteLine("7.  Минимальное значение массива");
+                        Console.WriteLine("8.  Самое частое число в массиве");
+                        Console.WriteLine("9.  Отсортировать массив");
+                        Console.WriteLine("10. Проверка на палидромность");
+                        Console.WriteLine("11. Выход из режима");
                         Console.WriteLine();
                         Console.WriteLine();
                         string c = "";
-                        bool flag_2 = true;
-                        while (flag_2)
+                        bool flag_1 = true;
+                        while (flag_1)
                         {
                             c = Console.ReadLine();
                             switch (c)
@@ -163,22 +182,37 @@ public class work_array
                                     }
                                 case "9":
                                     {
-                                        flag_2 = false;
+                                        Array.Sort(a);
+                                        Console.WriteLine("Массив отсортирован");
+                                        break;
+                                    }
+                                case "10":
+                                    {
+                                        if (array.palindrom(n, a))
+                                            Console.WriteLine("Массив является палиндромом");
+                                        else
+                                            Console.WriteLine("Массив не является палиндромом");
+                                        break;
+                                    }
+                                case "11":
+                                    {
+                                        flag_1 = false;
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         Console.WriteLine("Выберите действие: ");
                                         Console.WriteLine("1. Ввести массив в ручную до 1000 элементов");
                                         Console.WriteLine("2. Сгенерировать случайный массив до 1000 элементов");
-                                        Console.WriteLine("10. Выход из программы");
+                                        Console.WriteLine("exit - Выход из программы");
                                         Console.WriteLine();
                                         Console.WriteLine();
                                         break;
                                     }
+
                             }
                         }
                         break;
                     }
-                case "10":
+                case "exit":
                     {
                         flag = false;
                         break;
@@ -248,6 +282,20 @@ public class array_methods
         }
         Array.Sort(dictionary);
         return a[dictionary[1000 - 1]];
+    }
+
+    public bool palindrom(int n, int[] a)
+    {
+        bool flag = true;
+        for (int i = 0; i < n / 2; i++)
+        {
+            if (a[i] != a[n-1-i])
+            {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
     }
 }
 
