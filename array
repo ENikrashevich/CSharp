@@ -1,0 +1,268 @@
+using System;
+
+public class work_array
+{
+    public static void Main()
+    {
+        rand rnd = new rand();
+        array_methods array = new array_methods();
+        Console.WriteLine("Выберите действие: ");
+        Console.WriteLine("1. Ввести массив в ручную до 1000 элементов");
+        Console.WriteLine("2. Сгенерировать случайный массив до 1000 элементов");
+        Console.WriteLine("10. Выход из программы");
+        Console.WriteLine();
+        Console.WriteLine();
+        bool flag = true;
+        while (flag)
+        {
+            string s = "";
+            s = Console.ReadLine();
+            int[] dictionary = new int[1000];
+            int n, mx, mn, mid, mod, sum;
+            int[] a;
+            switch (s)
+            {
+                case "1":
+                    {
+                        Console.WriteLine("Введите длину массива");
+                        n = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Введите массив ");
+                        a = Console.ReadLine().Split(' ').Select(x => int.Parse(x)).ToArray();
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("3. Напечатать массив");
+                        Console.WriteLine("4. Сумму всех элементов массива");
+                        Console.WriteLine("5. Среднее значение массива");
+                        Console.WriteLine("6. Максимальное значение массива");
+                        Console.WriteLine("7. Минимальное значение массива");
+                        Console.WriteLine("8. Самое частое число в массиве");
+                        Console.WriteLine("9. Выход из режима");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        string c = "";
+                        bool flag_1 = true;
+                        while (flag_1)
+                        {
+                            c = Console.ReadLine();
+                            switch (c)
+                            {
+                                case "3":
+                                    {
+                                        array.print_array(n, a);
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        sum = array.sum_array(n, a);
+                                        Console.WriteLine("Сумма всех элементов = " + sum);
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        mid = array.mid_num(n, a);
+                                        Console.WriteLine("Среднее значение = " + mid);
+                                        break;
+                                    }
+                                case "6":
+                                    {
+                                        mx = array.max_num(n, a);
+                                        Console.WriteLine("Максимальное значение = " + mx);
+                                        break;
+                                    }
+                                case "7":
+                                    {
+                                        mn = array.min_num(n, a);
+                                        Console.WriteLine("Минимальное значение - " + mn);
+                                        break;
+                                    }
+                                case "8":
+                                    {
+                                        mod = array.mod_num(n, a, dictionary);
+                                        Console.WriteLine("Самое частое число в массиве = " + mod);
+                                        break;
+                                    }
+                                case "9":
+                                    {
+                                        flag_1 = false;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Выберите действие: ");
+                                        Console.WriteLine("1. Ввести массив в ручную до 1000 элементов");
+                                        Console.WriteLine("2. Сгенерировать случайный массив до 1000 элементов");
+                                        Console.WriteLine("10. Выход из программы");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        break;
+                                    }
+                            }
+                        }
+                        break;
+                    }
+                case "2":
+                    {
+                        n = rnd.generator_int();
+                        a = new int[n];
+                        for (int i = 0; i < n; i++)
+                        {
+                            a[i] = rnd.generator_array();
+                        }
+                        Console.WriteLine("Массив сгенерирован");
+                        array.print_array(n, a);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("3. Напечатать массив");
+                        Console.WriteLine("4. Сумму всех элементов массива");
+                        Console.WriteLine("5. Среднее значение массива");
+                        Console.WriteLine("6. Максимальное значение массива");
+                        Console.WriteLine("7. Минимальное значение массива");
+                        Console.WriteLine("8. Самое частое число в массиве");
+                        Console.WriteLine("9. Выход из режима");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        string c = "";
+                        bool flag_2 = true;
+                        while (flag_2)
+                        {
+                            c = Console.ReadLine();
+                            switch (c)
+                            {
+                                case "3":
+                                    {
+                                        array.print_array(n, a);
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        sum = array.sum_array(n, a);
+                                        Console.WriteLine("Сумма всех элементов = " + sum);
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        mid = array.mid_num(n, a);
+                                        Console.WriteLine("Среднее значение = " + mid);
+                                        break;
+                                    }
+                                case "6":
+                                    {
+                                        mx = array.max_num(n, a);
+                                        Console.WriteLine("Максимальное значение = " + mx);
+                                        break;
+                                    }
+                                case "7":
+                                    {
+                                        mn = array.min_num(n, a);
+                                        Console.WriteLine("Минимальное значение - " + mn);
+                                        break;
+                                    }
+                                case "8":
+                                    {
+                                        mod = array.mod_num(n, a, dictionary);
+                                        Console.WriteLine("Самое частое число в массиве = " + mod);
+                                        break;
+                                    }
+                                case "9":
+                                    {
+                                        flag_2 = false;
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        Console.WriteLine("Выберите действие: ");
+                                        Console.WriteLine("1. Ввести массив в ручную до 1000 элементов");
+                                        Console.WriteLine("2. Сгенерировать случайный массив до 1000 элементов");
+                                        Console.WriteLine("10. Выход из программы");
+                                        Console.WriteLine();
+                                        Console.WriteLine();
+                                        break;
+                                    }
+                            }
+                        }
+                        break;
+                    }
+                case "10":
+                    {
+                        flag = false;
+                        break;
+                    }
+            }
+        }
+    }
+}
+
+public class array_methods
+{
+
+    public void print_array(int n, int[] a)
+    {
+        Console.WriteLine("Длина массива " + n);
+        Console.Write("Массив ");
+        for (int i = 0;i<n;i++)
+        {
+            Console.Write(a[i] + " ");
+        }
+        Console.WriteLine();
+    }
+
+    public int sum_array(int n, int[] a)
+    {
+        int count = 0;
+        for(int i = 0; i < n; i++)
+        {
+            count+= a[i];   
+        }
+        return count;
+    }
+
+    public int mid_num(int n, int[] a)
+    {
+        int res = sum_array(n, a);
+        return res / n;
+    }
+
+    public int max_num(int n, int[] a)
+    {
+        int mx = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] > mx)
+                mx = a[i];
+        }
+        return mx;
+    }
+
+    public int min_num(int n, int[] a)
+    {
+        int min = 1000000000;
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] < min)
+                min = a[i];
+        }
+        return min;
+    }
+
+    public int mod_num(int n, int[] a, int[] dictionary)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            dictionary[a[i]]+=1;
+        }
+        Array.Sort(dictionary);
+        return a[dictionary[1000 - 1]];
+    }
+}
+
+public class rand
+{
+    public int generator_int()
+    {
+        Random rnd = new Random();
+        return rnd.Next(1, 1000);
+    }
+
+    public int generator_array()
+    {
+        Random rnd = new Random();
+        int a = rnd.Next(0, 1000);
+        return a;
+    }
+}
