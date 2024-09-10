@@ -12,7 +12,7 @@ public class Game
         return;
     }
 
-    public void check_less_10_int(int x, int key) 
+    public void check_less_10_int(int x, int key)
     {
         if (x >= key - 10 && x <= key + 10)
             Console.WriteLine("Разница меньше или равна 10");
@@ -54,41 +54,59 @@ public class Game
                 case "1":
                     {
                         int key = random.rand_int();
-                        int x = Convert.ToInt32(Console.ReadLine());
-                        while (x != key)
+                        Console.WriteLine("Введите exit для выхода из режима или продолжите игру вводя числа");
+                        string x = Console.ReadLine();
+                        if (x == "exit")
+                            break;
+                        int a = Convert.ToInt32(x);
+                        while (a != key)
                         {
-                            if(x >= key - 100 && x <= key + 100)
-                                game.check_less_100_int(x, key);
-                            if(x >= key - 10 && x <= key + 10)
-                                game.check_less_10_int(x, key);
-                            x = Convert.ToInt32(Console.ReadLine());
+
+                            if (a >= key - 100 && a <= key + 100)
+                                game.check_less_100_int(a, key);
+                            if (a >= key - 10 && a <= key + 10)
+                                game.check_less_10_int(a, key);
+                            a = Convert.ToInt32(Console.ReadLine());
+
                         }
-                        Console.WriteLine("Поздравляю с победой!");
-                        flag_win = true;
+                        if (a == key)
+                        {
+                            flag_win = true;
+                            Console.WriteLine("Поздравляю с победой!");
+                        }
                         Console.WriteLine("Выберите какое число загадывать" + '\n' + "1. Целые" + '\n' + "2. С плав. точкой" + '\n' + "3. Выход из игры");
                         break;
                     }
                 case "2":
                     {
                         double key = random.rand_double();
-                        double x = Convert.ToDouble(Console.ReadLine());
-                        while (x != key)
+                        Console.WriteLine("Введите exit для выхода из режима или продолжите игру вводя числа");
+                        string x = Console.ReadLine();
+                        if (x == "exit")
+                            break;
+                        double a = Convert.ToDouble(x);
+                        while (a != key)
                         {
-                            if(x >= key - 100 && x <= key + 100)
-                                game.check_less_100_double(x, key);
-                            if(x >= key - 10 && x <= key + 10)
-                                game.check_less_10_double(x, key);
-                            x = Convert.ToInt32(Console.ReadLine());
+
+                            if (a >= key - 100 && a <= key + 100)
+                                game.check_less_100_double(a, key);
+                            if (a >= key - 10 && a  <= key + 10)
+                                game.check_less_10_double(a, key);
+                            a = Convert.ToDouble(Console.ReadLine());
+
                         }
-                        Console.WriteLine("Поздравляю с победой!");
-                        flag_win = true;
-                        Console.WriteLine("Выберите какое число загадывать" + '\n' + "1. Целые" + '\n' + "2. С плав. точкой" + '\n' + "3. Выход из игры");
+                        if (a == key)
+                        {
+                            flag_win = true;
+                            Console.WriteLine("Поздравляю с победой!");
+                        }
+                            Console.WriteLine("Выберите какое число загадывать" + '\n' + "1. Целые" + '\n' + "2. С плав. точкой" + '\n' + "3. Выход из игры");
                         break;
                     }
                 case "3":
                     {
                         flag = false;
-                        if(!flag_win) 
+                        if (!flag_win)
                             Console.WriteLine("СЛАБОООООСТЬ");
                         break;
                     }
