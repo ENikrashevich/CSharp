@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
 
 public class work_array
 {
@@ -9,7 +11,7 @@ public class work_array
         Console.WriteLine("Выберите действие: ");
         Console.WriteLine("1. Ввести массив в ручную до 1000 элементов");
         Console.WriteLine("2. Сгенерировать случайный массив до 1000 элементов");
-        Console.WriteLine("10. Выход из программы");
+        Console.WriteLine("exit - Выход из программы");
         Console.WriteLine();
         Console.WriteLine();
         bool flag = true;
@@ -17,7 +19,6 @@ public class work_array
         {
             string s = "";
             s = Console.ReadLine();
-            int[] dictionary = new int[1000];
             int n, mx, mn, mid, mod, sum;
             int[] a;
             switch (s)
@@ -79,7 +80,7 @@ public class work_array
                                     }
                                 case "8":
                                     {
-                                        mod = array.mod_num(n, a, dictionary);
+                                        mod = array.mod_num(n, a, array.dictionary);
                                         Console.WriteLine("Самое частое число в массиве = " + mod);
                                         break;
                                     }
@@ -87,6 +88,7 @@ public class work_array
                                     {
                                         Array.Sort(a);
                                         Console.WriteLine("Массив отсортирован");
+                                        array.print_array(n, a);
                                         break;
                                     }
                                 case "10":
@@ -99,6 +101,13 @@ public class work_array
                                     }
                                 case "11":
                                     {
+                                        array.del_twins(n, a);
+                                        n = a.Length;
+                                        array.print_array(n, a);
+                                        break;
+                                    }
+                                case "12":
+                                    {
                                         flag_1 = false;
                                         Console.WriteLine();
                                         Console.WriteLine();
@@ -110,7 +119,7 @@ public class work_array
                                         Console.WriteLine();
                                         break;
                                     }
-                                    
+
                             }
                         }
                         break;
@@ -119,10 +128,7 @@ public class work_array
                     {
                         n = rnd.generator_int();
                         a = new int[n];
-                        for (int i = 0; i < n; i++)
-                        {
-                            a[i] = rnd.generator_array();
-                        }
+                        a = rnd.generator_array(n, a);
                         Console.WriteLine("Массив сгенерирован");
                         array.print_array(n, a);
                         Console.WriteLine();
@@ -176,7 +182,7 @@ public class work_array
                                     }
                                 case "8":
                                     {
-                                        mod = array.mod_num(n, a, dictionary);
+                                        mod = array.mod_num(n, a, array.dictionary);
                                         Console.WriteLine("Самое частое число в массиве = " + mod);
                                         break;
                                     }
@@ -184,6 +190,7 @@ public class work_array
                                     {
                                         Array.Sort(a);
                                         Console.WriteLine("Массив отсортирован");
+                                        array.print_array(n, a);
                                         break;
                                     }
                                 case "10":
@@ -224,12 +231,13 @@ public class work_array
 
 public class array_methods
 {
+    public int[] dictionary = new int[1000];
 
     public void print_array(int n, int[] a)
     {
         Console.WriteLine("Длина массива " + n);
         Console.Write("Массив ");
-        for (int i = 0;i<n;i++)
+        for (int i = 0; i < n; i++)
         {
             Console.Write(a[i] + " ");
         }
@@ -239,9 +247,9 @@ public class array_methods
     public int sum_array(int n, int[] a)
     {
         int count = 0;
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
         {
-            count+= a[i];   
+            count += a[i];
         }
         return count;
     }
@@ -278,10 +286,12 @@ public class array_methods
     {
         for (int i = 0; i < n; i++)
         {
-            dictionary[a[i]]+=1;
+            dictionary[a[i]] += 1;
         }
         Array.Sort(dictionary);
-        return a[dictionary[1000 - 1]];
+        int key = a[dictionary[1000 - 1]];
+        dictionary = new int[1000];
+        return key;
     }
 
     public bool palindrom(int n, int[] a)
@@ -289,13 +299,39 @@ public class array_methods
         bool flag = true;
         for (int i = 0; i < n / 2; i++)
         {
-            if (a[i] != a[n-1-i])
+            if (a[i] != a[n - 1 - i])
             {
                 flag = false;
                 break;
             }
         }
         return flag;
+    }
+
+    public int[] swap(int id, int[] a)
+    {
+        int tmp = a[id];
+        a[id] = a[id++];
+        a[id] = tmp;
+        return a;
+    }
+
+    public int[] del_twins(int n, int[] a)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if (dictionary[a[i]] != 0)
+            {
+                for(int j = i; j < n - 1; j++)
+                {
+                    swap(j, a);
+                }
+                n--;
+            }
+            else
+                dictionary[a[i]] += 1;
+        }
+        return a;
     }
 }
 
@@ -307,10 +343,13 @@ public class rand
         return rnd.Next(1, 1000);
     }
 
-    public int generator_array()
+    public int[] generator_array(int n, int[] array)
     {
         Random rnd = new Random();
-        int a = rnd.Next(0, 1000);
-        return a;
+        for(int i = 0;i < n;i++)
+        {
+            array[i] = rnd.Next(0, 1000);
+        }
+        return array;
     }
 }
