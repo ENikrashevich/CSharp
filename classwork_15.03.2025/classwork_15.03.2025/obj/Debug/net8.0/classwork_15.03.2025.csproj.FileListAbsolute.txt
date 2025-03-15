@@ -1,0 +1,14 @@
+H:\classwork_15.03.2025\classwork_15.03.2025\bin\Debug\net8.0\classwork_15.03.2025.exe
+H:\classwork_15.03.2025\classwork_15.03.2025\bin\Debug\net8.0\classwork_15.03.2025.deps.json
+H:\classwork_15.03.2025\classwork_15.03.2025\bin\Debug\net8.0\classwork_15.03.2025.runtimeconfig.json
+H:\classwork_15.03.2025\classwork_15.03.2025\bin\Debug\net8.0\classwork_15.03.2025.dll
+H:\classwork_15.03.2025\classwork_15.03.2025\bin\Debug\net8.0\classwork_15.03.2025.pdb
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.GeneratedMSBuildEditorConfig.editorconfig
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.AssemblyInfoInputs.cache
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.AssemblyInfo.cs
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.csproj.CoreCompileInputs.cache
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.dll
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\refint\classwork_15.03.2025.dll
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.pdb
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\classwork_15.03.2025.genruntimeconfig.cache
+H:\classwork_15.03.2025\classwork_15.03.2025\obj\Debug\net8.0\ref\classwork_15.03.2025.dll
