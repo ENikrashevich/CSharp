@@ -11,7 +11,7 @@ namespace classwork_15._03._2025.Factory
     {
         protected override ICar GetCar()
         {
-            return new Golf();
+            return new Tiguan(new CarPartsFactoryGermany());
         }
     }
 }

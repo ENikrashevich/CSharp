@@ -1,4 +1,6 @@
-﻿using System;
+﻿using classwork_15._03._2025.Factory;
+using classwork_15._03._2025.Parts;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,13 +14,15 @@ namespace classwork_15._03._2025.Car
     {
         private string _name;
         private string _body;
-        private string _engine = "Gasoline";
-        private string _wheels = "\"14";
+        private IEngine _engine;
+        private IWheels _wheels;
+        private ICarPartsFactory _partsFactory;
 
-        public Golf()
+        public Golf(ICarPartsFactory partsFactory)
         {
             _name = "Golf";
             _body = "Hatchback";
+            _partsFactory = partsFactory;
         }
 
         public void AssemblyBody()
@@ -28,17 +32,22 @@ namespace classwork_15._03._2025.Car
 
         public void AssemblyEngine()
         {
-            Console.WriteLine("Установка двигателя {0}", _engine);
+            _engine = _partsFactory.GetEngine();
         }
 
         public void AssemblyWheels()
         {
-            Console.WriteLine("Установка колес {0}", _wheels);
+            _wheels = _partsFactory.GetWheels();
         }
 
         public string GetName()
         {
             return _name;
+        }
+
+        public string GetBody()
+        {
+            return _body;
         }
     }
 }
