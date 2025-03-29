@@ -1,0 +1,14 @@
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.GeneratedMSBuildEditorConfig.editorconfig
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.AssemblyInfoInputs.cache
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.AssemblyInfo.cs
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.csproj.CoreCompileInputs.cache
+H:\patternComand\patternComand\bin\Debug\net8.0\patternComand.exe
+H:\patternComand\patternComand\bin\Debug\net8.0\patternComand.deps.json
+H:\patternComand\patternComand\bin\Debug\net8.0\patternComand.runtimeconfig.json
+H:\patternComand\patternComand\bin\Debug\net8.0\patternComand.dll
+H:\patternComand\patternComand\bin\Debug\net8.0\patternComand.pdb
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.dll
+H:\patternComand\patternComand\obj\Debug\net8.0\refint\patternComand.dll
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.pdb
+H:\patternComand\patternComand\obj\Debug\net8.0\patternComand.genruntimeconfig.cache
+H:\patternComand\patternComand\obj\Debug\net8.0\ref\patternComand.dll
