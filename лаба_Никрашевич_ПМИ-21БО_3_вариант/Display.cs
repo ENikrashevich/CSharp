@@ -11,6 +11,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
         public string state = "";
         public double tmp = 0.0;
         public int statePay = 0;
+        Random random = new Random();
         public void display(double money, Bank bank, Management manage)
         {
             while(true) 
@@ -28,9 +29,14 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                         Console.WriteLine("Введите сумму");
                         tmp = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("\n");
-                        Console.WriteLine("Проверка счета клиента");
                         Console.WriteLine("Пополнение счета на " + tmp);
                         Console.WriteLine("Ожидание подтверждения пополнения");
+                        if(random.Next(0, 100) == 1)
+                        {
+                            Console.WriteLine("Обнаружены фальшивые деньги, прекращение работы");
+                            return;
+                        }
+                        Console.WriteLine("Все купюры прошли проверку");
                         Console.WriteLine("Печать чека");
                         Console.WriteLine("Счет был пополнен на " + tmp);
                         Console.WriteLine("\n");

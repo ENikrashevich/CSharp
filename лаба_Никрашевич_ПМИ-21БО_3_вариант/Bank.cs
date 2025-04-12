@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
 {
     public class Bank
     {
         public double balance;
-
         public Bank()
         { 
             balance = 0.0;

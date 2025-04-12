@@ -9,6 +9,5 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
     public interface ICommand
     {
         void Execute();
-        void Undo();
     }
 }
