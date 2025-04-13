@@ -1,0 +1,14 @@
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\bin\Debug\net7.0\лаба_2_вариант_С#.exe
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\bin\Debug\net7.0\лаба_2_вариант_С#.deps.json
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\bin\Debug\net7.0\лаба_2_вариант_С#.runtimeconfig.json
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\bin\Debug\net7.0\лаба_2_вариант_С#.dll
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\bin\Debug\net7.0\лаба_2_вариант_С#.pdb
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.AssemblyInfoInputs.cache
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.AssemblyInfo.cs
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.csproj.CoreCompileInputs.cache
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.dll
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\refint\лаба_2_вариант_С#.dll
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.pdb
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\лаба_2_вариант_С#.genruntimeconfig.cache
+C:\Users\Егор\Desktop\python\лаба_2_вариант_С#\obj\Debug\net7.0\ref\лаба_2_вариант_С#.dll
