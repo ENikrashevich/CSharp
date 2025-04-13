@@ -18,10 +18,9 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
         {
             _bank.PayGasSupply();
         }
-
         public void Undo()
         {
-
+            _bank = null;
         }
     }
 }

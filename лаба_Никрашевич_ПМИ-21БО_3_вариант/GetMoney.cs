@@ -20,10 +20,9 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
         {
             _bank.Get(_money);
         }
-
         public void Undo()
         {
-
+            _bank = null;
         }
     }
 }

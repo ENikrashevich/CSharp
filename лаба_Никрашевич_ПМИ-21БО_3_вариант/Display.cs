@@ -16,7 +16,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
         {
             while(true) 
             {
-                Console.WriteLine("Текущий счет " + bank.balance);
+                Console.WriteLine("Текущий счет: " + bank.balance);
                 Console.WriteLine("Выберите операцию");
                 Console.WriteLine("1. Внесение средств");
                 Console.WriteLine("2. Снятие средств");
@@ -71,15 +71,14 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                         break;
                     case "3":
                         Console.WriteLine("\n");
-                        if (bank.balance == 0)
+                        if (bank.balance < 350)
                         {
                             Console.WriteLine("Невозможно произвести операцию");
                             Console.WriteLine("\n");
                         }
                         else if (bank.balance >= 350 && bank.balance <= 1200)
                         {
-
-                            Console.WriteLine("Текущий счет:" + bank.balance);
+                            Console.WriteLine("Текущий счет: " + bank.balance);
                             Console.WriteLine("Выберите что оплатить:");
                             Console.WriteLine("1. Сотовая связь - 350 рублей");
                             Console.WriteLine("2. Отмена операции");
@@ -91,7 +90,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                         else if(bank.balance >= 1200 && bank.balance <= 1500)
                         {
 
-                            Console.WriteLine("Текущий счет:" + bank.balance);
+                            Console.WriteLine("Текущий счет: " + bank.balance);
                             Console.WriteLine("Выберите что оплатить:");
                             Console.WriteLine("1. Сотовая связь - 350 рублей");
                             Console.WriteLine("2. Водоснабжение - 1200 рублей");
@@ -103,7 +102,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                         }
                         else if(bank.balance >= 1500 && bank.balance <= 2000)
                         {
-                            Console.WriteLine("Текущий счет:" + bank.balance);
+                            Console.WriteLine("Текущий счет: " + bank.balance);
                             Console.WriteLine("Выберите что оплатить:");
                             Console.WriteLine("1. Сотовая связь - 350 рублей");
                             Console.WriteLine("2. Водоснабжение - 1200 рублей");
@@ -116,7 +115,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                         }
                         else
                         {
-                            Console.WriteLine("Текущий счет:" + bank.balance);
+                            Console.WriteLine("Текущий счет: " + bank.balance);
                             Console.WriteLine("Выберите что оплатить:");
                             Console.WriteLine("1. Сотовая связь - 350 рублей");
                             Console.WriteLine("2. Водоснабжение - 1200 рублей");
@@ -150,6 +149,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                     Console.WriteLine("Со счета списано 350 рублей на оплату сотовой связи");
                     break;
                 case 2:
+                    manage.UndoCommand();
                     break;
                 default:
                     Console.WriteLine("Неверно выбранная операция");
@@ -181,6 +181,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                     Console.WriteLine("Со счета списано 1200 рублей на оплату водоснабжения");
                     break;
                 case 3:
+                    manage.UndoCommand();
                     break;
                 default:
                     Console.WriteLine("Неверно выбранная операция");
@@ -222,6 +223,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                     Console.WriteLine("Со счета списано 350 рублей на газоснабжения");
                     break;
                 case 4:
+                    manage.UndoCommand();
                     break;
                 default:
                     Console.WriteLine("Неверно выбранная операция");
@@ -273,6 +275,7 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
                     Console.WriteLine("Со счета списано 2000 рублей на оплату электроснабжения");
                     break;
                 case 5:
+                    manage.UndoCommand();
                     break;
                 default:
                     Console.WriteLine("Неверно выбранная операция");

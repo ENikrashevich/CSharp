@@ -19,5 +19,9 @@ namespace лаба_Никрашевич_ПМИ_21БО_3_вариант
         {
             _command.Execute();
         }
+        public void UndoCommand()
+        { 
+            _command.Undo();
+        }
     }
 }
