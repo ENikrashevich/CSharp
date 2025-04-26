@@ -1,0 +1,14 @@
+H:\SampleTemplate\SampleTemplate\bin\Debug\net8.0\SampleTemplate.exe
+H:\SampleTemplate\SampleTemplate\bin\Debug\net8.0\SampleTemplate.deps.json
+H:\SampleTemplate\SampleTemplate\bin\Debug\net8.0\SampleTemplate.runtimeconfig.json
+H:\SampleTemplate\SampleTemplate\bin\Debug\net8.0\SampleTemplate.dll
+H:\SampleTemplate\SampleTemplate\bin\Debug\net8.0\SampleTemplate.pdb
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.GeneratedMSBuildEditorConfig.editorconfig
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.AssemblyInfoInputs.cache
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.AssemblyInfo.cs
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.csproj.CoreCompileInputs.cache
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.dll
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\refint\SampleTemplate.dll
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.pdb
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\SampleTemplate.genruntimeconfig.cache
+H:\SampleTemplate\SampleTemplate\obj\Debug\net8.0\ref\SampleTemplate.dll
